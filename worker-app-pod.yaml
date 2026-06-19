@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-app-pod
+  labels:
+    name: worker-app-pod
+    app: demo-voting-app
+spec:
+  containers:
+    - name: worker-app
+      image: kodekloud/examplevotingapp_worker:v1
+      #since the worker pod has no ports listening, we do not need to specify any ports here. 
+      #The worker pod is responsible for processing the votes and updating the results in the database, 
+      #it does not need to expose any ports for external communication.
+        
+        
